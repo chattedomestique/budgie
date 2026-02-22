@@ -15,7 +15,7 @@ const DEFAULT_CATEGORIES = [
 const ICONS = [“🏛️”,“📋”,“🏠”,“🛒”,“💰”,“🏥”,“👶”,“🎒”,“✨”,“🚗”,“🍕”,“💊”,“📱”,“🎮”,“✈️”,“🎓”,“🐾”,“🏋️”,“🎵”,“📚”,“💻”,“👗”,“💇”,“🏖️”,“🍺”,“☕”,“🎁”,“🔧”,“🌿”,“🏦”];
 const COLORS = [”#FF3B30”,”#FF9500”,”#FFCC00”,”#34C759”,”#007AFF”,”#5856D6”,”#AF52DE”,”#FF2D55”,”#32ADE6”,”#FF6B35”,”#4ECDC4”,”#45B7D1”,”#96CEB4”,”#FFEAA7”,”#DDA0DD”];
 
-const STORAGE_KEY = “paycheck-divider-v1”;
+const STORAGE_KEY = “budgie”;
 
 function loadData() {
 try {
