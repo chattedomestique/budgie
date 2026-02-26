@@ -756,7 +756,9 @@ export default function App() {
 
         /* ── Sheet / overlay ────────────────────────────────── */
         .cat-row  { animation: slideUp 0.22s ease both; }
-        .sheet    { animation: slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1) both; }
+        .sheet    { animation: slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1) both; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+        .sheet-scroll { overflow-y: auto; max-height: 88vh; max-height: 88dvh; }
+        .sheet-scroll-lg { overflow-y: auto; max-height: 90vh; max-height: 90dvh; }
 
         /* ── Inputs ─────────────────────────────────────────── */
         .ios-input {
@@ -1599,13 +1601,12 @@ export default function App() {
       {/* Export Sheet */}
       {showExport && (
         <div
-          style={{ position: "fixed", inset: 0, background: "rgba(26,18,8,0.55)", display: "flex", alignItems: "flex-end", zIndex: 100, animation: "fadeIn 0.2s ease" }}
+          style={{ position: "fixed", top: 0, right: 0, bottom: 0, left: 0, background: "rgba(26,18,8,0.55)", display: "flex", alignItems: "flex-end", zIndex: 100, animation: "fadeIn 0.2s ease" }}
           onClick={e => { if (e.target === e.currentTarget) setShowExport(false); }}
         >
-          <div className="sheet" style={{
+          <div className="sheet sheet-scroll" style={{
             width: "100%", maxWidth: 430, margin: "0 auto",
             background: "var(--bg)", borderRadius: "22px 22px 0 0", padding: "24px 20px 48px",
-            maxHeight: "88vh", overflowY: "auto",
             border: "2.5px solid var(--ink)", borderBottom: "none",
             boxShadow: "0 -4px 0 var(--ink)",
           }}>
@@ -1746,13 +1747,12 @@ export default function App() {
       {/* Add Category Sheet */}
       {showAdd && (
         <div style={{
-          position: "fixed", inset: 0, background: "rgba(26,18,8,0.55)",
+          position: "fixed", top: 0, right: 0, bottom: 0, left: 0, background: "rgba(26,18,8,0.55)",
           display: "flex", alignItems: "flex-end", zIndex: 100, animation: "fadeIn 0.2s ease"
         }} onClick={e => { if (e.target === e.currentTarget) setShowAdd(false); }}>
-          <div className="sheet" style={{
+          <div className="sheet sheet-scroll-lg" style={{
             width: "100%", maxWidth: 430, margin: "0 auto",
             background: "var(--bg)", borderRadius: "22px 22px 0 0", padding: "24px 20px 48px",
-            maxHeight: "90vh", overflowY: "auto",
             border: "2.5px solid var(--ink)", borderBottom: "none",
             boxShadow: "0 -4px 0 var(--ink)",
           }}>
